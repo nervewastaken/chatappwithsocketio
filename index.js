@@ -13,14 +13,6 @@ const io = new Server(server);
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-// PostgreSQL connection setup
-const pool = new Pool({
-  user: 'postgres',
-  host: 'db',
-  database: 'socketio',
-  password: process.env.DB_PASS,
-  port: 5432,
-});
 
 app.get("/", (req, res) => {
   res.sendFile(join(__dirname, "index.html"));
